@@ -5,7 +5,12 @@ import App from "./App";
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
-test("renders learn react link", () => {
-  const wrapper = shallow(<App />);
-  expect(wrapper).toBeTruthy();
-});
+test("renders without error", () => {});
+
+test("renders button", () => {});
+
+test("renders counter display", () => {});
+
+test("counter starts at 0", () => {});
+
+test("clicking on button increments counter display without error", () => {});

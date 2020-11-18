@@ -23,4 +23,3 @@ expect(wrapper).toBeFalsy();
 - How multiple units work together
 
 ## 3. Acceptance / End-to-end (E2E) Tests
-

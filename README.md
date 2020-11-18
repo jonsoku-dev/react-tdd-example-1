@@ -34,3 +34,19 @@ expect(wrapper).toBeFalsy();
     * data-test는 오직 테스트에서만 사용됨
     * 원하는 이름을 정할 수 있다.
 * 이러한 테스트 속성이 프로덕션에 있길 원하지 않는다. -> 다음 강의에서
+
+# ejcect를 하여 babelrc 에 속성을 추가한다.
+test용으로 작성된 attribute인 data-test 속성을 지워준다.
+## install 
+https://www.npmjs.com/package/babel-plugin-react-remove-properties
+```
+yarn add -D babel-plugin-react-remove-properties
+```
+
+## 흐름
+1. yarn eject
+2. package.json의 babel부분에 babel-plugin-react-remove-properties 관련 속성 추가
+3. yarn build
+4. yarn -g add serve (초기 한번)
+5. yarn build
+빌드 된걸 보면 data-test 속성은 사라져있다.

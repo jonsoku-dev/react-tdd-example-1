@@ -57,3 +57,26 @@ yarn add -D babel-plugin-react-remove-properties
 * 실패한 테스트를 쉽게 진단할 수 있기를 원함
 * 때때로 이것은 반복된 코드를 의미한다.
 * DRY 테스트와 쉽게 진단되는 테스트 간의 균형
+
+## 공통함수로 묶는것에 대해서
+묶는건 좋은데... 이것으로 하나의 에러가 전체로 번질 수 있기 때문에, 테스트에서 
+디버깅하는 것이 어려워진다. 그래서 beforeEach()를 사용하면 좋을것같다.
+
+## beforeEach
+각각 하나마다 다시 실행해주는 for문같은 놈
+
+# Enzyme Text method
+text메소드는 말그대로 string을 얻어온다. 만약 컴포넌트에서 string이외의 값이면
+JSON.stringfy 한듯한 string으로 넘어올 것이다.
+그러므로 아래와 같이 숫자를 강제적으로 string으로 변환하여 값을비교해야한다. 
+```
+const setup = () => shallow(<App />);
+
+const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test='${val}']`);
+
+test("counter starts at 0", () => {
+  const wrapper = setup();
+  const count = findByTestAttr(wrapper, "counter").text();
+  expect(count).toBe("0");
+});
+```

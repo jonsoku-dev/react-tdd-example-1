@@ -50,3 +50,10 @@ yarn add -D babel-plugin-react-remove-properties
 4. yarn -g add serve (초기 한번)
 5. yarn build
 빌드 된걸 보면 data-test 속성은 사라져있다.
+
+# DRY pros and cons
+* DRY의 의미는 Don't Repeat Yourself의 약자
+* 테스트 코드의 목표가 생산 코드의 목표와 같지 않음
+* 실패한 테스트를 쉽게 진단할 수 있기를 원함
+* 때때로 이것은 반복된 코드를 의미한다.
+* DRY 테스트와 쉽게 진단되는 테스트 간의 균형
